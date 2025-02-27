@@ -1,14 +1,26 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 import {getArticles} from '../api.js'
 
 export default function Home() {
-    const [articles, setArticles] = React.useState([])
+    const [articles, setArticles] = React.useState<Article[]>([])
+    
+    interface Article  {
+        title: string
+        author?: string
+        description?: string
+        content: string
+        publishedAt?: string
+        source?: {name: string}
+        url: string
+        urlToImage?: string
+    }
 
     React.useEffect(() => {
         async function loadArticles() {
             try {
                 const data = await getArticles()
-                setArticles(data)
+                setArticles(data as Article[])
             } catch (err) {
                 console.log(err)
             }
@@ -17,21 +29,32 @@ export default function Home() {
     }, [])
 
     React.useEffect(() => {
+        console.log(articles)
         console.log(articles[1]?.title)
     }, [articles])
 
-    // trying to get somethingggg to show in main component from api
     const articleElements = articles.map(article => {
-        <div>
-            {article.title}
-        </div>
+        return (
+            <div className="article-container" key={article.title}>
+                <Link 
+                    to={article.url}
+                    className="article-inner"
+                >
+                    <div className="img-container">
+                        <img src={article.urlToImage} alt="image unavailable" />                        
+                    </div>
+                    <div className="article-text">
+                        <h2>{article.title}</h2>
+                        <p>{article.description}</p>
+                    </div>
+                </Link>
+            </div>
+        )
     })
     
     return (
-        <>
-            <div>homepage</div>
+        <div className="main-section">
             {articleElements}
-            
-        </>
+        </div>
     )
 }
