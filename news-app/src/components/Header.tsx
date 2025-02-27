@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, NavLink } from 'react-router-dom'
+import {getEntertainmentArticles} from '../api.js'
 
 
 
@@ -7,7 +8,7 @@ export default function Header() {
 
     const activeStyles = {
         fontWeight: 'bold',
-        color: 'blue',
+        color: '#fd9a85',
         textDecoration: 'underline'
     }
 

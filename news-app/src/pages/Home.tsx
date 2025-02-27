@@ -1,6 +1,6 @@
 import React from "react";
-import {Link} from 'react-router-dom'
-import {getArticles} from '../api.js'
+import { Link } from 'react-router-dom'
+import { getAllArticles } from '../api.js'
 
 export default function Home() {
     const [articles, setArticles] = React.useState<Article[]>([])
@@ -19,7 +19,7 @@ export default function Home() {
     React.useEffect(() => {
         async function loadArticles() {
             try {
-                const data = await getArticles()
+                const data = await getAllArticles()
                 setArticles(data as Article[])
             } catch (err) {
                 console.log(err)
