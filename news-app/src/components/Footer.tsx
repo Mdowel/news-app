@@ -2,6 +2,8 @@ import React from "react";
 
 export default function Footer() {
     return (
-        <div className="footer">footer goes here</div>
+        <div className="footer">
+            <p>&copy; 2025 RapidNews</p> 
+        </div>
     )
 }
