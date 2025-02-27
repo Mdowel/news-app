@@ -16,7 +16,7 @@ export default function Header() {
 
     return (
         <div className="header">
-            <a href="/">home</a>
+            <Link href="/">home</Link>
             <nav>
                 <NavLink
                     to='/entertainment'

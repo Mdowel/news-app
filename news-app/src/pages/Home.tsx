@@ -40,7 +40,7 @@ export default function Home() {
                     to={article.url}
                     className="article-inner"
                 >
-                    <div className="img-container">
+                    <div className="article-img-container">
                         <img src={article.urlToImage} alt="image unavailable" />                        
                     </div>
                     <div className="article-text">
