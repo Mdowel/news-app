@@ -40,7 +40,11 @@ export default function Entertainment() {
 
     return (
         <div className="main-section">
-            {articleElements}
+            <h1>Hot Topics</h1>
+            <div className="featured-article">{articleElements[0]}</div>
+            <div className="article-grid">
+                {articleElements.slice(1)}
+            </div>
         </div>
     )
 }

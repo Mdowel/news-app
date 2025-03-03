@@ -27,7 +27,7 @@ export default function Home() {
         async function loadArticles() {
             try {
                 const data = await getAllArticles()
-                setArticles(data as Article[])
+                setArticles(data.slice(0,10) as Article[])
             } catch (err) {
                 console.log(err)
             }
@@ -42,14 +42,13 @@ export default function Home() {
 
     const articleElements = articles.map(article => {
         return (
-
                 <div className="article-container" key={article.title}>
                     <Link 
                         // to={article.url}
                         className="article-inner"
                     >
                         <div className="article-img-container">
-                            <img src={article.urlToImage} alt="image unavailable" />                        
+                            {/* <img src={article.urlToImage} alt="image unavailable" />                         */}
                         </div>
                         <div className="article-text">
                             <h2>{article.title}</h2>
@@ -63,7 +62,11 @@ export default function Home() {
     
     return (
         <div className="main-section">
-            {articleElements}
+            <h1>Hot Topics</h1>
+            <div className="featured-article">{articleElements[0]}</div>
+            <div className="article-grid">
+                {articleElements.slice(1)}
+            </div>
         </div>
     )
 }
