@@ -30,7 +30,8 @@ export default function Entertainment() {
                 </div>
                 <div className="article-text">
                     <h2>{article.title}</h2>
-                    <p>{article.description}</p>
+                    {/* <p>{article.description}</p> */}
+                    <p>{article.body}</p>
                 </div>
             </Link>
         </div>
