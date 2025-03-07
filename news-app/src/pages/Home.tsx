@@ -42,21 +42,22 @@ export default function Home() {
 
     const articleElements = articles.map(article => {
         return (
+            <Link 
+                // to={article.url}
+                className="article-inner"
+            >
                 <div className="article-container" key={article.title}>
-                    <Link 
-                        // to={article.url}
-                        className="article-inner"
-                    >
-                        <div className="article-img-container">
-                            {/* <img src={article.urlToImage} alt="image unavailable" />                         */}
-                        </div>
-                        <div className="article-text">
-                            <h2>{article.title}</h2>
-                            {/* <p>{article.description}</p> */}
-                            {<p>{article.body}</p>}
-                        </div>
-                    </Link>
+                    <div className="article-img-container">
+                        {/* <img src={article.urlToImage} alt="image unavailable" />                         */}
+                        <img src="https://i.insider.com/67bec42be015c5d98a6af08a?width=2000&format=jpeg&auto=webp" alt="image unavailable" />                        
+                    </div>
+                    <div className="article-text">
+                        <h2>{article.title}</h2>
+                        {/* <p>{article.description}</p> */}
+                        {<p>{article.body}</p>}
+                    </div>
                 </div>
+            </Link>
         )
     })
     

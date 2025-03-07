@@ -38,7 +38,7 @@ export default function Sports() {
     
     return (
         <div className="main-section">
-            <h1>Hot Topics</h1>
+            <h1>Sports</h1>
             <div className="featured-article">{articleElements[0]}</div>
             <div className="article-grid">
                 {articleElements.slice(1)}
