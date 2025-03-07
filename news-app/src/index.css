@@ -51,7 +51,7 @@ html, body {
 h1 {
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin: 1rem 0 .5rem 0;
 }
 
 h2 {
@@ -221,6 +221,10 @@ nav {
 }
 
 @media (min-width: 1000px) {
+  h1 {
+    font-size: 3rem;
+  }
+  
   h2 {
     font-size: .9rem;
   }

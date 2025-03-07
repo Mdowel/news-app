@@ -27,7 +27,7 @@ export default function Home() {
         async function loadArticles() {
             try {
                 const data = await getAllArticles()
-                setArticles(data.slice(0,10) as Article[])
+                setArticles(data.slice(0,17) as Article[])
             } catch (err) {
                 console.log(err)
             }
@@ -54,7 +54,7 @@ export default function Home() {
                     <div className="article-text">
                         <h2>{article.title}</h2>
                         {/* <p>{article.description}</p> */}
-                        {<p id="article-paragraph">{article.body.substring(0,150) + "..."}</p>}
+                        {<p id="article-paragraph">{article.body.substring(0,125) + "..."} <a href={article.url}>read more</a></p>}
                     </div>
                 </div>
             </Link>
