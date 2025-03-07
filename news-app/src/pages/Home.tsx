@@ -54,7 +54,7 @@ export default function Home() {
                     <div className="article-text">
                         <h2>{article.title}</h2>
                         {/* <p>{article.description}</p> */}
-                        {<p>{article.body}</p>}
+                        {<p id="article-paragraph">{article.body.substring(0,150) + "..."}</p>}
                     </div>
                 </div>
             </Link>
