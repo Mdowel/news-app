@@ -6,22 +6,22 @@ export default function Home() {
     const [articles, setArticles] = React.useState<Article[]>([])
     
     // interface for json placeholder
-    // interface Article {
-    //     title: string
-    //     body: string
-    //     id: number
-    // }
-// interface for newsapi
-    interface Article  {
+    interface Article {
         title: string
-        author?: string
-        description?: string
-        content: string
-        publishedAt?: string
-        source?: {name: string}
-        url: string
-        urlToImage?: string
+        body: string
+        id: number
     }
+// interface for newsapi
+    // interface Article  {
+    //     title: string
+    //     author?: string
+    //     description?: string
+    //     content: string
+    //     publishedAt?: string
+    //     source?: {name: string}
+    //     url: string
+    //     urlToImage?: string
+    // }
 
     React.useEffect(() => {
         async function loadArticles() {
@@ -48,20 +48,20 @@ export default function Home() {
             >
                 <div className="article-container" key={article.title}>
                     <div className="article-img-container">
-                        <img src={article.urlToImage} alt="image unavailable" />                        
-                        {/* <img src="https://i.insider.com/67bec42be015c5d98a6af08a?width=2000&format=jpeg&auto=webp" alt="image unavailable" />                         */}
+                        {/* <img src={article.urlToImage} alt="image unavailable" />                         */}
+                        <img src="https://i.insider.com/67bec42be015c5d98a6af08a?width=2000&format=jpeg&auto=webp" alt="image unavailable" />                        
                     </div>
                     <div className="article-text">
                         <h2>{article.title}</h2>
-                        {article.content && article.content.length > 125 ? (
+                        {/* {article.content && article.content.length > 125 ? (
                             <p>
                                 {article.content.substring(0,125) + "..."} 
                                 <a href={article.url}>read more</a>
                             </p>
                         ) : (
                             article.content && <p>{article.content}</p>
-                        )}
-                        {/* {<p id="article-paragraph">{article.body.substring(0,125) + "..."} <a href={article.url}>read more</a></p>} */}
+                        )} */}
+                        {<p id="article-paragraph">{article.body.substring(0,125) + "..."} <a href={article.url}>read more</a></p>}
                     </div>
                 </div>
             </Link>
