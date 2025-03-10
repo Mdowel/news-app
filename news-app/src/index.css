@@ -80,7 +80,6 @@ a {
   /* color: #f5f1ed; */
   display: flex;
   align-items: center;
-
   justify-content: space-between;
   font-size: .75rem;
   text-transform: capitalize;
@@ -109,12 +108,20 @@ nav {
   gap: 1em;
 }
 
+nav > a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav > a:hover {
+  color: #51a201;
+}
+
 /* main section */
 .main-section {
   margin: 0 auto;
   padding-bottom: 1em;
   max-width: 80vw;
-
 }
 
 .featured-article > .article-inner > .article-container {
@@ -146,7 +153,6 @@ nav {
 .featured-article > .article-inner > .article-container > .article-text > p {
   display: none;
 }
-
 
 .article-grid {
   margin: 0 auto;
