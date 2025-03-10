@@ -1,6 +1,6 @@
 export async function getAllArticles() {
-    // const res = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=8545fe54b37e43e3bea9d5f9ba92764a')
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+    const res = await fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=8545fe54b37e43e3bea9d5f9ba92764a')
+    // const res = await fetch('https://jsonplaceholder.typicode.com/posts')
     if(!res.ok) 
         throw {
             message: 'Failed to fetch articles.',
@@ -10,8 +10,8 @@ export async function getAllArticles() {
     const data = await res.json()
     // console.log(data.articles)
     console.log(data)
-    // return data.articles
-    return data
+    return data.articles
+    // return data
 }
 
 export async function getEntertainmentArticles() {

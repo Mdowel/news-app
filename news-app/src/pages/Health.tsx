@@ -46,7 +46,14 @@ export default function Health() {
                     </div>
                     <div className="article-text">
                         <h2>{article.title}</h2>
-                        {/* <p>{article.description}</p> */}
+                        {/* {article.content && article.content.length > 125 ? (
+                            <p>
+                                {article.content.substring(0,125) + "..."} 
+                                <a href={article.url}>read more</a>
+                            </p>
+                        ) : (
+                            article.content && <p>{article.content}</p>
+                        )} */}
                         {<p id="article-paragraph">{article.body.substring(0,125) + "..."} <a href={article.url}>read more</a></p>}
                     </div>
                 </div>

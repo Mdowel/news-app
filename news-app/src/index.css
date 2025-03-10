@@ -134,11 +134,14 @@ nav > a:hover {
 
 .featured-article > .article-inner > .article-container > .article-img-container {
   height: 100%;
+  width: 100%;
   border-radius: 8px;
 }
 
 .featured-article > .article-inner > .article-container > .article-img-container > img {
   width: 100%;
+  height: 100%;
+
   border-radius: 8px;
 }
 
@@ -193,7 +196,7 @@ nav > a:hover {
 }
 
 .article-img-container {
-  /* height: 110px; */
+  min-height: 110px;
   width: 100%;
   background-color: #70798C;
   text-indent: 5px;
@@ -204,6 +207,7 @@ nav > a:hover {
   object-fit: cover;
   border-radius: 8px;
   height: 100%;
+  width: 100%;
 }
 
 /* Footer */
