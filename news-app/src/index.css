@@ -132,8 +132,14 @@ nav > a:hover {
   position: relative;
 }
 
+.featured-article > .article-inner > .article-container > .article-img-container {
+  height: 100%;
+  border-radius: 8px;
+}
+
 .featured-article > .article-inner > .article-container > .article-img-container > img {
   width: 100%;
+  border-radius: 8px;
 }
 
 .featured-article > .article-inner > .article-container > .article-text > h2 {
@@ -166,7 +172,7 @@ nav > a:hover {
 
 .article-container {
   height: 250px;
-  border-radius: 6px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -191,12 +197,12 @@ nav > a:hover {
   width: 100%;
   background-color: #70798C;
   text-indent: 5px;
-  border-radius: 6px;
-
+  border-radius: 8px;
 }
 
 .article-img-container > img {
   object-fit: cover;
+  border-radius: 8px;
   height: 100%;
 }
 
@@ -280,15 +286,16 @@ nav > a:hover {
   }
 
   .featured-article > .article-inner > .article-container > .article-text {
-    width: 40%;
+    width: 30%;
     height: 100%;
   }
 
   .featured-article > .article-inner > .article-container > .article-text > h2 {
-    line-height: 1.5rem;
+    line-height: 1.6rem;
     position: static;
     color: black;
     margin: 0 0 .5em 0;
+    font-size: 1.6rem;
   }
   
   .featured-article > .article-inner > .article-container > .article-text > p {
