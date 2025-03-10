@@ -15,7 +15,7 @@ export default function Header() {
 
     return (
         <div className="header">
-            <Link to="/">home</Link>
+            <Link to="/" className='logo'>News<span>Kiwi</span> <i className="fa-solid fa-kiwi-bird"></i></Link>
             <nav>
                 <NavLink
                     to='/entertainment'

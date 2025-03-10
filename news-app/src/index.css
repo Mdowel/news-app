@@ -45,7 +45,7 @@ html, body {
   font-family: Roboto, Tahoma, sans-serif;
   width: 100%;
   height: 100vh;
-  background-color: #C4C4C4;
+  background-color: #FDFDFD;
 }
 
 h1 {
@@ -76,8 +76,8 @@ a {
 .header {
   width: 100%;
   padding: .5em 1em;
-  background-color: #010156;
-  color: #f5f1ed;
+  /* background-color: #010156; */
+  /* color: #f5f1ed; */
   display: flex;
   align-items: center;
 
@@ -88,7 +88,20 @@ a {
 
 .header > a,
 nav > a {
-  color: #f5f1ed;
+  /* color: #f5f1ed; */
+}
+
+.logo {
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.logo > span {
+  background-color: black;
+  color: #FDFDFD;
+  border-radius: 6px;
+  padding: 4px 6px;
 }
 
 nav {
@@ -223,6 +236,8 @@ nav {
 @media (min-width: 1000px) {
   h1 {
     font-size: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
   }
   
   h2 {
@@ -231,7 +246,8 @@ nav {
 
   .header {
     height: 4em;
-    font-size: large;
+    font-size: larger;
+    padding: 1em 4em;
   }
 
   .main-section {
