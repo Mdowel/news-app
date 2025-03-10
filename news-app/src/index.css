@@ -196,11 +196,12 @@ nav {
 
 /* Footer */
 .footer {
-  background-color: #010156;
-  color: #f5f1ed;
+  background-color: #C4C4C4;
+  /* color: #f5f1ed; */
   height: 3em;
   text-align: center;
-  padding-top: .75em;
+  margin-top: 2.5em;
+  padding-top: 1em;
 }
 
 @media (min-width: 760px) {
