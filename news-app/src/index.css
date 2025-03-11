@@ -52,6 +52,7 @@ h1 {
   font-size: 2rem;
   font-weight: bold;
   margin: 1rem 0 .5rem 0;
+  text-decoration: underline;
 }
 
 h2 {
@@ -254,7 +255,7 @@ nav > a:hover {
   h1 {
     font-size: 3rem;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: .25em auto 0;
   }
   
   h2 {
@@ -275,7 +276,7 @@ nav > a:hover {
   .featured-article {
     max-width: 1000px;
     height: 375px;
-    margin: 2.5em auto 0;
+    margin: 1em auto;
   }
 
   .featured-article > .article-inner > .article-container > .article-img-container > img{
