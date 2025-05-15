@@ -14,7 +14,6 @@ interface Article  {
     title: string
     source_name?: string
     description?: string
-    content: string
     pubDate?: string
     source_url?: string
     link: string
@@ -22,11 +21,11 @@ interface Article  {
     category?: string
 }
 
-interface ArticlesProps {
-    category?: string
+type ArticlesProps = {
+    searchTerm?: string
 }
 
-export default function Articles( {category}: ArticlesProps ) {
+export default function Articles( { searchTerm }: { searchTerm?: string | null } ) {
 
     const [articles, setArticles] = React.useState<Article[]>([])
     const [isLoading, setIsLoading] = React.useState<boolean>(true)
@@ -36,23 +35,34 @@ export default function Articles( {category}: ArticlesProps ) {
 
     //newsdata.io version
     React.useEffect(() => {
-        if (hasFetched.current) return
-        hasFetched.current = true
+        // if (hasFetched.current) return
+        // hasFetched.current = true
 
         async function loadArticles() {
+            setIsLoading(true)
+            setError(null)
+
             try {
-                const data = await getAllArticles()
+                const data = await getAllArticles(searchTerm ?? undefined)
                 console.log("API response:", data)
-                setArticles(data.results as Article[])
-            if (data?.results) {
-                // const filteredArticles = category
-                //     ? data.articles.filter((article: Article) => article.category === category)
-                //     : data.articles;
-                setArticles(data.results.slice(0, 17) as Article[])
-                    // ( above might be setArticles(filteredArticles.slice(0, 17)) )
-            } else {
-                setError("No articles found.")
-            }
+                if (data?.results?.length) {
+                    setArticles(data.results.slice(0,9))
+                } else {
+                    setError('No articles found.')
+                }
+            // if (data?.results) {
+            //     let fetchedArticles = data.results as Article[]
+            //     if (searchTerm) {
+            //         fetchedArticles = fetchedArticles.filter(article => 
+            //             article.title.toLowerCase().includes(searchTerm.toLowerCase())
+            //         )
+            //     }
+
+            //     setArticles(fetchedArticles.slice(0, 9) as Article[])
+            //         // ( above might be setArticles(filteredArticles.slice(0, 17)) )
+            // } else {
+            //     setError("No articles found.")
+            // }
             } catch (err) {
                 console.log(err)
                 setError("Failed to load articles")
@@ -61,8 +71,22 @@ export default function Articles( {category}: ArticlesProps ) {
             }
         }
         loadArticles()
-    }, [])
-    console.log(articles);
+    }, [searchTerm])
+
+    // React.useEffect(() => {
+    //     if (searchTerm) {
+    //         const filtered = allArticles.filter(article => 
+    //             article.title.toLowerCase().includes(searchTerm.toLowerCase())
+    //         )
+    //         setArticles(filtered.slice(0,9))
+    //     } else {
+    //         setArticles(allArticles.slice(0,9))
+    //     }
+    // }, [searchTerm, allArticles])
+
+    if (isLoading) return <p>Loading...</p>
+    if (error) return <p>{error}</p>
+    console.log('articles:', articles);
     // console.log("Category prop in Articles:", category);
 
     //newsapi version

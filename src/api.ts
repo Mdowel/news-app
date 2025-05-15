@@ -1,7 +1,9 @@
 
 // //newsdata.io version
-export async function getAllArticles() {
-    const apiUrl = 'https://newsdata.io/api/1/latest?apikey=pub_872732b0ea8c2f7326337c9a2c16e2d63686d&language=en'
+export async function getAllArticles(searchTerm? : string) {
+    const apiUrl = searchTerm ?
+    'https://newsdata.io/api/1/latest?apikey=pub_872732b0ea8c2f7326337c9a2c16e2d63686d&language=en&q=${searchTerm}'
+    : 'https://newsdata.io/api/1/latest?apikey=pub_872732b0ea8c2f7326337c9a2c16e2d63686d&language=en'
     const res = await fetch(apiUrl)
     if(!res.ok) 
         throw new Error(`API request failed with status ${res.status}`)

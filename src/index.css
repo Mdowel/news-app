@@ -52,7 +52,7 @@ h1 {
   font-size: 2rem;
   font-weight: bold;
   margin: 1rem 0 .5rem 0;
-  text-decoration: underline;
+  text-decoration: underline #51a201;
 }
 
 h2 {
@@ -98,7 +98,7 @@ nav > a {
 }
 
 .logo > span {
-  background-color: black;
+  background-color: #51a201;
   color: #FDFDFD;
   border-radius: 6px;
   padding: 4px 6px;
@@ -116,6 +116,20 @@ nav > a {
 
 nav > a:hover {
   color: #51a201;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: 600;
+  font-size: .85rem;
+  max-width: 300px;
+}
+
+.search-box > input {
+  border-radius: 6px;
+  border-color: #51a201;
 }
 
 /* main section */
