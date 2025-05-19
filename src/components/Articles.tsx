@@ -25,7 +25,7 @@ type ArticlesProps = {
     searchTerm?: string
 }
 
-export default function Articles( { searchTerm }: { searchTerm?: string | null } ) {
+export default function Articles( { searchTerm }: { searchTerm?: string } ) {
 
     const [articles, setArticles] = React.useState<Article[]>([])
     const [isLoading, setIsLoading] = React.useState<boolean>(true)
@@ -46,7 +46,7 @@ export default function Articles( { searchTerm }: { searchTerm?: string | null }
                 const data = await getAllArticles(searchTerm ?? undefined)
                 console.log("API response:", data)
                 if (data?.results?.length) {
-                    setArticles(data.results.slice(0,9))
+                    setArticles(data.results.slice(0,9) as Article[])
                 } else {
                     setError('No articles found.')
                 }

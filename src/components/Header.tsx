@@ -3,21 +3,23 @@ import { Link, NavLink } from 'react-router-dom'
 
 
 export default function Header({ onSearch }: { onSearch: (term: string) => void }) {
+    console.log('Header rendered')
     const [inputValue, setInputValue] = React.useState('')
-
-    const activeStyles = {
-        fontWeight: 'bold',
-        color: '#51a201',
-        textDecoration: 'underline'
-    }
+    // const activeStyles = {
+    //     fontWeight: 'bold',
+    //     color: '#51a201',
+    //     textDecoration: 'underline'
+    // }
 
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault()
-        onSearch(inputValue)
+        const trimmedInput = inputValue.trim()
+        console.log('submitted search term:', trimmedInput)
+        onSearch(trimmedInput)
     }
 
-    const getNavLinkStyles = ({ isActive }:{ isActive: boolean }) => 
-        isActive ? activeStyles : null
+    // const getNavLinkStyles = ({ isActive }:{ isActive: boolean }) => 
+    //     isActive ? activeStyles : null
 
     return (
         <div className="header">
@@ -48,11 +50,12 @@ export default function Header({ onSearch }: { onSearch: (term: string) => void 
                 onSubmit={handleSubmit}>
                     <input 
                         type="text" 
+                        aria-label="Search articles"
                         value={inputValue}
                         onChange={e => setInputValue(e.target.value)}
                         placeholder="Search articles..."
                     />
-                <button type="submit">Search</button>
+                <button type="button" onClick={handleSubmit} disabled = {!inputValue.trim()}>Search</button>
             </form>
         </div>
     )

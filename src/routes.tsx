@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Layout from './components/Layout'
-import Entertainment from './pages/Entertainment'
-import Health from './pages/Health'
-import Sports from './pages/Sports'
+// import Entertainment from './pages/Entertainment'
+// import Health from './pages/Health'
+// import Sports from './pages/Sports'
 
 
 export default function App() {
@@ -14,9 +14,9 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
-                    <Route path='entertainment' element={<Entertainment />} />
+                    {/* <Route path='entertainment' element={<Entertainment />} />
                     <Route path='health' element={<Health />} />
-                    <Route path='sports' element={<Sports />} />
+                    <Route path='sports' element={<Sports />} /> */}
                 </Route>
             </Routes>
         </BrowserRouter>
