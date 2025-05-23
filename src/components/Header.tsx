@@ -1,8 +1,12 @@
 import React from "react";
 import { Link, NavLink } from 'react-router-dom'
 
+type HeaderProps = {
+    onSearch: (term:string) => void
+    onResetSearch: () => void
+}
 
-export default function Header({ onSearch }: { onSearch: (term: string) => void }) {
+export default function Header({ onSearch, onResetSearch }: HeaderProps) {
     console.log('Header rendered')
     const [inputValue, setInputValue] = React.useState('')
     // const activeStyles = {
@@ -23,7 +27,14 @@ export default function Header({ onSearch }: { onSearch: (term: string) => void 
 
     return (
         <div className="header">
-            <Link to="/" className='logo'>News<span>Kiwi</span> <i className="fa-solid fa-kiwi-bird"></i></Link>
+            <Link 
+                to="/" 
+                className='logo'
+                onClick = {() => onResetSearch()}
+            >
+                    News<span>Kiwi</span> 
+                    <i className="fa-solid fa-kiwi-bird"></i>
+            </Link>
             {/* <nav>
                 <NavLink
                     to='/entertainment'
