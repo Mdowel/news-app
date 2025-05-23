@@ -92,7 +92,7 @@ nav > a {
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   text-decoration: none;
   font-weight: bold;
 }
@@ -102,8 +102,9 @@ nav > a {
   color: #FDFDFD;
   border-radius: 6px;
   padding: 4px 6px;
+  margin-right: 5px;
 }
-
+/* 
 nav {
   display: flex;
   gap: 1em;
@@ -116,14 +117,14 @@ nav > a {
 
 nav > a:hover {
   color: #51a201;
-}
+} */
 
 .search-box {
   display: flex;
   gap: 10px;
   align-items: center;
   font-weight: 600;
-  font-size: .85rem;
+  font-size: .5rem;
   max-width: 300px;
 }
 
@@ -194,7 +195,6 @@ nav > a:hover {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  /* background-color: #f5f1ed; */
   font-size: .65rem;
 }
 
@@ -243,6 +243,15 @@ nav > a:hover {
   .header {
     height: 3em;
     font-size: medium;
+    padding: 2em;
+  }
+
+  .logo {
+    font-size: 1.75rem;
+  }
+
+  .search-box {
+    font-size: .85rem;
   }
   
   .featured-article > .article-container {
@@ -254,8 +263,6 @@ nav > a:hover {
     margin-top: 3em;
     grid-template-columns: repeat(3, minmax(100px, 1fr));
     gap: 1.5em;
-    /* max-width: 600px; */
-    /* margin-left: 0; */
   }
 
   .article-container {
