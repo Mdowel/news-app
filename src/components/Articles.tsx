@@ -46,7 +46,7 @@ export default function Articles( { searchTerm }: { searchTerm?: string } ) {
                 if (data?.results?.length) {
                     const uniqueArticles = data.results.filter(
                         (article: Article, index: number, self: Article[] ) =>
-                            index === self.findIndex((a:Article) => a.link === article.link)
+                            index === self.findIndex((a:Article) => a.title === article.title)
                     )
                     setArticles(uniqueArticles.slice(0,9) as Article[])
                 } else {
