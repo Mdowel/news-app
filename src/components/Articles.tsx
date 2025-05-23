@@ -9,7 +9,7 @@ import { getAllArticles } from '../api.ts'
 //     id: number
 // }
 
-// interface for newsapi
+// interface for newsdata.io
 interface Article  {
     title: string
     source_name?: string
@@ -52,19 +52,7 @@ export default function Articles( { searchTerm }: { searchTerm?: string } ) {
                 } else {
                     setError('No articles found.')
                 }
-            // if (data?.results) {
-            //     let fetchedArticles = data.results as Article[]
-            //     if (searchTerm) {
-            //         fetchedArticles = fetchedArticles.filter(article => 
-            //             article.title.toLowerCase().includes(searchTerm.toLowerCase())
-            //         )
-            //     }
 
-            //     setArticles(fetchedArticles.slice(0, 9) as Article[])
-            //         // ( above might be setArticles(filteredArticles.slice(0, 17)) )
-            // } else {
-            //     setError("No articles found.")
-            // }
             } catch (err) {
                 console.log(err)
                 setError("Failed to load articles")
@@ -75,79 +63,10 @@ export default function Articles( { searchTerm }: { searchTerm?: string } ) {
         loadArticles()
     }, [searchTerm])
 
-    // React.useEffect(() => {
-    //     if (searchTerm) {
-    //         const filtered = allArticles.filter(article => 
-    //             article.title.toLowerCase().includes(searchTerm.toLowerCase())
-    //         )
-    //         setArticles(filtered.slice(0,9))
-    //     } else {
-    //         setArticles(allArticles.slice(0,9))
-    //     }
-    // }, [searchTerm, allArticles])
 
     if (isLoading) return <p>Loading...</p>
     if (error) return <p>{error}</p>
     console.log('articles:', articles);
-    // console.log("Category prop in Articles:", category);
-
-    //newsapi version
-    // React.useEffect(() => {
-    //     async function loadArticles() {
-    //         try {
-    //             const data = await getAllArticles(category)
-    //             console.log("API response:", data)
-    //             if (data?.articles) {
-    //                 // const filteredArticles = category
-    //                 //     ? data.articles.filter((article: Article) => article.category === category)
-    //                 //     : data.articles;
-    //                 setArticles(data.articles.slice(0, 17) as Article[])
-    //                     // ( above might be setArticles(filteredArticles.slice(0, 17)) )
-    //             } else {
-    //                 setError("No articles found.")
-    //             }
-    //         } catch (err) {
-    //             console.log(err)
-    //             setError("Failed to load articles")
-    //         } finally {
-    //             setIsLoading(false)
-    //         }
-    //     }
-    //     loadArticles()
-    // }, [category])
-    // console.log(articles);
-    // console.log("Category prop in Articles:", category);
-    
-    //json placeholder version
-    // React.useEffect(() => {
-    //     async function loadArticles() {
-    //         try {
-    //             const data = await getAllArticles(category)
-    //             console.log("API response:", data)
-    //             // const filteredArticles = category
-    //             // ? data.filter((article: Article) => article.category === category)
-    //             // : data
-                
-    //             setArticles(data as Article[])
-    //         } catch (err) {
-    //             console.log(err)
-    //             setError("Failed to load articles")
-    //         } finally {
-    //             setIsLoading(false)
-    //         }
-    //     }
-    //     loadArticles()
-    // }, [])
-    // console.log(articles);
-    // console.log("Category prop in Articles:", category);
-
-
-    // if (isLoading)
-    //     return <p>Loading articles...</p>
-    if (error)
-        return <p className="error">{error}</p>
-
-   
 
     return (
         <>
@@ -215,7 +134,7 @@ export default function Articles( { searchTerm }: { searchTerm?: string } ) {
     )
 }
 
-
+//json placeholder version
  // React.useEffect(() => {
     //     console.log(category)
     //     console.log(articles[1]?.title)
@@ -249,10 +168,3 @@ export default function Articles( { searchTerm }: { searchTerm?: string } ) {
     //         </Link>
     //     )
     // })
-
-
-
-            // <div className="featured-article">{articleElements[0]}</div>
-            // <div className="article-grid">
-            //     {articleElements.slice(1)}
-            // </div>

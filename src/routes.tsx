@@ -1,5 +1,3 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Layout from './components/Layout'
@@ -22,7 +20,3 @@ export default function App() {
         </BrowserRouter>
     )
 }
-
-// ReactDOM
-//     .createRoot(document.getElementById('root'))
-//     .render(<App />)
