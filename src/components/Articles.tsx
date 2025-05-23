@@ -32,11 +32,9 @@ export default function Articles( { searchTerm }: { searchTerm?: string } ) {
     const [error, setError] = React.useState<string | null>(null)
     const hasFetched = React.useRef(false)
 
-
+    
     //newsdata.io version
     React.useEffect(() => {
-        // if (hasFetched.current) return
-        // hasFetched.current = true
 
         async function loadArticles() {
             setIsLoading(true)
@@ -46,7 +44,11 @@ export default function Articles( { searchTerm }: { searchTerm?: string } ) {
                 const data = await getAllArticles(searchTerm ?? undefined)
                 console.log("API response:", data)
                 if (data?.results?.length) {
-                    setArticles(data.results.slice(0,9) as Article[])
+                    const uniqueArticles = data.results.filter(
+                        (article: Article, index: number, self: Article[] ) =>
+                            index === self.findIndex((a:Article) => a.link === article.link)
+                    )
+                    setArticles(uniqueArticles.slice(0,9) as Article[])
                 } else {
                     setError('No articles found.')
                 }
